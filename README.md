@@ -6,9 +6,9 @@ This analysis will demonstrate how financial literacy mitigates stress, reinforc
 
 Determine if respondents with higher financial literacy scores (based on correct answers to M6-M10, M31, M50) report lower financial stress (higher confidence of covering an unexpected need of $2,000 within the next month, J20). This supports the argument that understanding investing and personal finance reduces anxiety, emphasizing the value of financial education.
 
-## Steps
+## Analysis Steps
 
-### 1: Data Preparation
+### Step 1: Data Preparation
 
 1. Load the Dataset
    - Open "NFCS 2024 State Data 250623.csv" using Data > From Text/CSV 
@@ -18,8 +18,10 @@ Determine if respondents with higher financial literacy scores (based on correct
 3. Create Financial Literacy Score
    - In a new column calculate the literacy_score with =SUM(([@M6]=1)+([@M7]=3)+([@M8]=2)+([@M9]=1)+([@M10]=2)+([@M31]=2)+([@M50]=1))
    - Bin scores into categories (e.g., Low: 0-2, Medium: 3-4, High: 5-7) using =IF([@[literacy_score]]<=2,"Low",IF([@[literacy_score]]<=4,"Medium","High"))
+5. Reverse J20 so higher values mean higher confidence.
+6. Copy data to new sheet labeled "Cleaned Data"
 
-### 2: Exploratory Analysis with Pivot Tables
+### Step 2: Exploratory Analysis with Pivot Tables
 
 
 
